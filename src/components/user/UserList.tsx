@@ -31,6 +31,7 @@ import { useNavigate } from "react-router-dom";
 import { getToken } from "../../../getAuth";
 import useDebounce from "../hooks/useDebounce";
 import DeleteModal from "../ui/DeleteModal";
+import { Margin } from "@mui/icons-material";
 
 interface UserType {
   _id: string;
@@ -109,7 +110,7 @@ const UserList = ({ tab }: any) => {
   const endIndex = Math.min(page * limit, total);
 
   return (
-    <Box>
+    <Box  sx={{  mb: 10 }}>
       <Grid
         container
         justifyContent="space-between"

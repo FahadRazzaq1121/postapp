@@ -104,7 +104,6 @@ const CreatePostModal = ({ open, setOpen, page, limit, search }: any) => {
       <DialogTitle>Create Post</DialogTitle>
       <DialogContent>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          ={" "}
           <Box
             display="flex"
             justifyContent="center"

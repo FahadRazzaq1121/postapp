@@ -74,7 +74,7 @@ const PostList = () => {
   const endIndex = Math.min(page * limit, total);
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
+    <Container maxWidth="lg" sx={{ mt: 4, mb: 10 }}>
       <Box
         display="flex"
         justifyContent="space-between"
@@ -125,38 +125,55 @@ const PostList = () => {
               <Card sx={{ height: "100%" }}>
                 <CardMedia
                   component="img"
-                  height="180"
+                  height="220"
                   image={post.image}
                   alt={post.title}
                 />
-                <CardContent>
+                <CardContent sx={{ paddingBottom: 1 }}>
                   <Typography
                     variant="h6"
                     fontWeight="bold"
                     gutterBottom
                     noWrap
+                    sx={{ mb: 0.5 }}
                   >
                     {post.title}
                   </Typography>
+
                   <Typography variant="body2" color="text.secondary" noWrap>
                     {post.content.length > 120
                       ? `${post.content.slice(0, 120)}...`
                       : post.content}
                   </Typography>
+                </CardContent>
+
+                <CardActions
+                  sx={{
+                    paddingLeft: 2,
+                    paddingRight: 2,
+                    paddingBottom: 1,
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
                   <Typography
                     variant="caption"
                     color="text.secondary"
-                    display="block"
-                    mt={1}
+                    sx={{
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
                   >
                     Author: {post.author_id.name}
                   </Typography>
-                </CardContent>
-                <CardActions>
+
                   <IconButton
                     color="error"
                     onClick={() => handleDelete(post._id)}
                     aria-label="Delete"
+                    sx={{ padding: 0 }}
                   >
                     <Delete />
                   </IconButton>
