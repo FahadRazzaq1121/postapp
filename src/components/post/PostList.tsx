@@ -80,8 +80,16 @@ const PostList = () => {
         justifyContent="space-between"
         alignItems="center"
         mb={4}
+        sx={{
+          flexDirection: { xs: "column", sm: "row" },
+          gap: 2,
+        }}
       >
-        <Typography variant="h4" fontWeight="bold">
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          sx={{ textAlign: { xs: "center", sm: "left" } }}
+        >
           Posts
         </Typography>
         <TextField
@@ -93,9 +101,19 @@ const PostList = () => {
           InputProps={{
             endAdornment: <InputAdornment position="end">🔍</InputAdornment>,
           }}
-          sx={{ width: "50%" }}
+          sx={{
+            width: { xs: "100%", sm: "50%" },
+            marginBottom: { xs: 2, sm: 0 },
+          }}
         />
-        <Button variant="contained" color="primary" onClick={handleOpenModal}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleOpenModal}
+          sx={{
+            width: { xs: "100%", sm: "auto" },
+          }}
+        >
           Create Post
         </Button>
       </Box>

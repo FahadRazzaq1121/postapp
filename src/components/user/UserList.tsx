@@ -110,8 +110,23 @@ const UserList = ({ tab }: any) => {
 
   return (
     <Box>
-      <Grid container justifyContent="space-between" alignItems="center" mb={3}>
-        <Typography variant="h5">Users</Typography>
+      <Grid
+        container
+        justifyContent="space-between"
+        alignItems="center"
+        mb={3}
+        sx={{
+          flexDirection: { xs: "column", sm: "row" },
+          gap: 2,
+        }}
+      >
+        <Typography
+          variant="h5"
+          sx={{ textAlign: { xs: "center", sm: "left" } }}
+        >
+          Users
+        </Typography>
+
         <TextField
           size="small"
           placeholder="Search by email"
@@ -121,17 +136,26 @@ const UserList = ({ tab }: any) => {
           InputProps={{
             endAdornment: <InputAdornment position="end">🔍</InputAdornment>,
           }}
+          sx={{
+            width: { xs: "100%", sm: "auto" },
+            marginBottom: { xs: 2, sm: 0 },
+          }}
         />
+
         {userProfile?.role !== "User" && (
           <Button
             variant="contained"
             color="primary"
             onClick={handleCreateUser}
+            sx={{
+              width: { xs: "100%", sm: "auto" },
+            }}
           >
             Create User
           </Button>
         )}
       </Grid>
+
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
