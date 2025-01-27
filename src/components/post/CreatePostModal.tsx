@@ -19,12 +19,21 @@ import { dispatch } from "../../../lib/redux/store";
 import { getPost } from "../../../lib/redux/slices/post-slice";
 
 interface PostFormData {
+  _id: string;
   title: string;
   content?: string;
   image: File | null;
 }
 
-const CreatePostModal = ({ open, setOpen, page, limit, search }: any) => {
+interface PostType {
+  open: boolean;
+  setOpen: any;
+  page: number;
+  limit: number;
+  search: string;
+}
+
+const CreatePostModal = ({ open, setOpen, page, limit, search }: PostType) => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [toast, setToast] = useState<{
     message: string;
@@ -65,7 +74,6 @@ const CreatePostModal = ({ open, setOpen, page, limit, search }: any) => {
       );
       if (res.data.success) {
         reset();
-        setValue("image", null);
         setPreviewImage(null);
         await dispatch(getPost(page, limit, search));
         setToast({
