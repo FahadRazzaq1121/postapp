@@ -138,7 +138,7 @@ const UserList = ({ tab }: any) => {
             endAdornment: <InputAdornment position="end">🔍</InputAdornment>,
           }}
           sx={{
-            width: { xs: "100%", sm: "auto" },
+            width: { xs: "100%", sm: "50%" },
             marginBottom: { xs: 2, sm: 0 },
           }}
         />
