@@ -2,7 +2,7 @@ import { Dispatch, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { fetchDataWrapper } from "../../../util";
 
-const BaseUrl = "http://localhost:8000/api";
+const BaseUrl = import.meta.env.VITE_API_KEY;
 
 interface User {
   _id: string;

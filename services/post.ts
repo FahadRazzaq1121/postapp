@@ -1,8 +1,8 @@
-const BASE_URL = `http://localhost:8000/api/post`;
+const baseURL = import.meta.env.VITE_API_KEY;
 import { getToken } from "../getAuth";
 const fetchPosts = async (page: number, limit: number, search?: string) => {
   const response = await fetch(
-    `${BASE_URL}?page=${page}&limit=${limit}&search=${search}`,
+    `${baseURL}/post?page=${page}&limit=${limit}&search=${search}`,
     {
       method: "GET",
       headers: {
