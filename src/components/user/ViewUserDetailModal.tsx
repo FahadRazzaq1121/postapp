@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { getToken } from "../../../getAuth";
 import { Modal, Box, Typography, Button } from "@mui/material";
@@ -21,10 +21,14 @@ interface UserInfoType {
 interface ViewUserDetailModalProps {
   userId: string | null;
   open: boolean;
-  setOpen:any
+  setOpen: any;
 }
 
-const ViewUserDetailModal = ({ userId, open, setOpen }: ViewUserDetailModalProps) => {
+const ViewUserDetailModal = ({
+  userId,
+  open,
+  setOpen,
+}: ViewUserDetailModalProps) => {
   const [userDetails, setUserDetails] = useState<UserInfoType | null>(null);
   const [userPost, setUserPost] = useState<PostType[]>([]);
 
@@ -54,10 +58,10 @@ const ViewUserDetailModal = ({ userId, open, setOpen }: ViewUserDetailModalProps
 
   const handleClose = () => {
     setOpen(false);
-  }
+  };
 
   if (!userDetails) {
-    return
+    return;
   }
 
   return (
@@ -108,10 +112,17 @@ const ViewUserDetailModal = ({ userId, open, setOpen }: ViewUserDetailModalProps
                     style={{ height: "180px", objectFit: "cover" }}
                   />
                   <div className="card-body">
-                    <Typography variant="body2" component="h5" className="text-truncate fw-bold mb-2">
+                    <Typography
+                      variant="body2"
+                      component="h5"
+                      className="text-truncate fw-bold mb-2"
+                    >
                       {post.title}
                     </Typography>
-                    <Typography variant="body2" className="text-muted text-truncate mb-3">
+                    <Typography
+                      variant="body2"
+                      className="text-muted text-truncate mb-3"
+                    >
                       {post.content}
                     </Typography>
                   </div>

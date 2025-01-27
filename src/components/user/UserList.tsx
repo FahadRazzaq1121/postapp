@@ -110,7 +110,7 @@ const UserList = ({ tab }: any) => {
   const endIndex = Math.min(page * limit, total);
 
   return (
-    <Box  sx={{  mb: 10 }}>
+    <Box sx={{ mb: 10 }}>
       <Grid
         container
         justifyContent="space-between"

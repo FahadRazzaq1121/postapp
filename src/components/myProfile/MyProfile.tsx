@@ -1,7 +1,16 @@
-
 import { useSelector } from "react-redux";
 import { selectUserProfile } from "../../../lib/redux/slices/userProfile-slice";
-import { Box, Card, CardHeader, CardContent, Typography, List, ListItem, ListItemText, CircularProgress } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardHeader,
+  CardContent,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  CircularProgress,
+} from "@mui/material";
 
 const MyProfile = () => {
   const user = useSelector(selectUserProfile);

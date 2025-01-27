@@ -9,9 +9,9 @@ interface User {
   role: string;
 }
 
-const initialState: { user: User[], total: number } = {
+const initialState: { user: User[]; total: number } = {
   user: [],
-  total: 0
+  total: 0,
 };
 
 const userSlice = createSlice({
@@ -24,9 +24,8 @@ const userSlice = createSlice({
     },
     setTotalUser(state, action) {
       const total = action.payload;
-        state.total = total
+      state.total = total;
     },
-
   },
 });
 
@@ -35,10 +34,10 @@ export const selectUser = (state: RootState) => state.user.user;
 export const selectTotalUser = (state: RootState) => state.user.total;
 export default userSlice.reducer;
 
-export function getUser(page: number, limit: number, search: string ='') {
+export function getUser(page: number, limit: number, search: string = "") {
   return async (dispatch: Dispatch) => {
     const res = await fetchUser(page, limit, search);
     dispatch(setUser(res.users));
-    dispatch(setTotalUser(res.totalUsers))
+    dispatch(setTotalUser(res.totalUsers));
   };
 }

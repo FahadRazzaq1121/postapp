@@ -42,14 +42,7 @@ const schema = yup
   })
   .required();
 
-const CreateUserModal = ({
-  open,
-  setOpen,
-  page,
-  limit,
-  search,
-  user,
-}: any) => {
+const CreateUserModal = ({ open, setOpen, page, limit, search, user }: any) => {
   const [toast, setToast] = useState<{
     message: string;
     type: "success" | "error";
@@ -161,7 +154,7 @@ const CreateUserModal = ({
                   {...register("role")}
                   error={!!errors.role}
                   helperText={errors.role?.message}
-                  defaultValue="" 
+                  defaultValue=""
                 >
                   <MenuItem value="">Select Role</MenuItem>
                   {options.map((role: string) => (
