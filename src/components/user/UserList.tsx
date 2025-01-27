@@ -161,10 +161,18 @@ const UserList = ({ tab }: any) => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Role</TableCell>
-              <TableCell>Action</TableCell>
+              <TableCell style={{ fontWeight: "bold", fontSize: "18px" }}>
+                Name
+              </TableCell>
+              <TableCell style={{ fontWeight: "bold", fontSize: "18px" }}>
+                Email
+              </TableCell>
+              <TableCell style={{ fontWeight: "bold", fontSize: "18px" }}>
+                Role
+              </TableCell>
+              <TableCell style={{ fontWeight: "bold", fontSize: "18px" }}>
+                Action
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
