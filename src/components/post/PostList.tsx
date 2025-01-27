@@ -95,7 +95,7 @@ const PostList = () => {
         <TextField
           variant="outlined"
           size="small"
-          placeholder="Search by email"
+          placeholder="Search by post title"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           InputProps={{

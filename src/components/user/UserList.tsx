@@ -130,7 +130,7 @@ const UserList = ({ tab }: any) => {
 
         <TextField
           size="small"
-          placeholder="Search by email"
+          placeholder="Search by user name"
           variant="outlined"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
