@@ -73,6 +73,8 @@ const ViewUserDetailModal = ({
           left: "50%",
           transform: "translate(-50%, -50%)",
           width: { xs: "90%", sm: "60%", md: "50%" },
+          maxHeight: "90vh",
+          overflowY: "auto",
           bgcolor: "background.paper",
           borderRadius: 2,
           boxShadow: 24,
